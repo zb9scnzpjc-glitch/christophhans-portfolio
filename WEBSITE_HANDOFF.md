@@ -17,7 +17,7 @@ Portable notes for whoever edits this site next. Read this before changing page 
   - `every-day-is-an-empty-stage.html` ← `../900 Every Day is an Empty Stage.md`
 - Keep image references local to this folder and its project asset subfolders. Do not use the parent `_assets` paths in the published pages.
 - Keep the empty `.nojekyll` marker in the repo root: GitHub Pages otherwise omits the `__work thumbnails` folder because it begins with underscores.
-- GitHub preserves exact Unicode filename bytes. For accented asset paths, match the spelling/normalization in the repository (for example, the Wolken folder uses decomposed umlauts) and verify every image loads on the hosted preview.
+- The web uploader may normalize accented text in HTML differently from filenames. For accent-sensitive asset paths, percent-encode the UTF-8 bytes to match the repository name (for example, `Lu%CC%88tzerath.png` and `Wolken u%CC%88ber Lu%CC%88tzerath/...`); verify the live URLs return images.
 - When using `read_file` output as a patch reference, discard its `LINE|` display prefix; it is not part of the file.
 
 ## Site-wide style and responsive rules
