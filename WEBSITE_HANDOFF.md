@@ -16,6 +16,8 @@ Portable notes for whoever edits this site next. Read this before changing page 
   - `driving-europe.html` ← `../800 Driving Europe.md`
   - `every-day-is-an-empty-stage.html` ← `../900 Every Day is an Empty Stage.md`
 - Keep image references local to this folder and its project asset subfolders. Do not use the parent `_assets` paths in the published pages.
+- Keep the empty `.nojekyll` marker in the repo root: GitHub Pages otherwise omits the `__work thumbnails` folder because it begins with underscores.
+- GitHub preserves exact Unicode filename bytes. For accented asset paths, match the spelling/normalization in the repository (for example, the Wolken folder uses decomposed umlauts) and verify every image loads on the hosted preview.
 - When using `read_file` output as a patch reference, discard its `LINE|` display prefix; it is not part of the file.
 
 ## Site-wide style and responsive rules
@@ -58,6 +60,6 @@ Portable notes for whoever edits this site next. Read this before changing page 
 ## Preview and publishing status
 
 - Local preview: from this folder run `python3 -m http.server 8000 --bind 127.0.0.1`, then open `http://localhost:8000/`.
-- The site has not been published. No GitHub repository has been created and no GoDaddy DNS settings have been changed.
-- GitHub Pages can use `christophhans.ch` as the public URL. The free plan generally requires a public repository, so the source files would be visible. GoDaddy remains the domain registrar.
-- Before publishing, verify all nine project routes, image loads, menu, footer count, page-turn sequence, and mobile layout.
+- The public repository is `https://github.com/zb9scnzpjc-glitch/christophhans-portfolio`. GitHub Pages publishes from `main` / repository root; the preview URL is `https://zb9scnzpjc-glitch.github.io/christophhans-portfolio/`.
+- Squarespace remains live at `christophhans.ch`. The GitHub Pages custom-domain setting is temporarily unset for preview, and no GoDaddy DNS changes have been made. Do not cut over DNS until the user explicitly approves the switch. When ready, set `christophhans.ch` in GitHub Pages first, then update only the web A/CNAME records at GoDaddy; preserve MX/TXT mail records.
+- Before DNS cutover, verify all nine project routes, image loads (especially Unicode-named assets), menu, footer count, page-turn sequence, and mobile layout.
